@@ -39,8 +39,9 @@ No gradients. No glow. No ornamental softness.
 ## Install (Local)
 
 1. Copy this folder into your vault at:
-
+```
 .obsidian/themes/
+```
 
 2. In Obsidian, go to:
 
