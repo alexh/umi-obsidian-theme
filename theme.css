@@ -461,19 +461,6 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus {
   table,
   .markdown-preview-view table {
     border-collapse: collapse !important;
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
-  }
-
-  thead,
-  .markdown-preview-view thead {
-    display: table-header-group !important;
-  }
-
-  tr,
-  .markdown-preview-view tr {
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
   }
 
   th,
@@ -492,28 +479,15 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus {
     padding: 6px 12px !important;
   }
 
-  pre,
-  .markdown-preview-view pre,
-  blockquote,
-  .markdown-preview-view blockquote,
-  .callout,
-  .markdown-preview-view .callout,
-  figure,
-  img {
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
-  }
-
-  h1, h2, h3, h4, h5, h6,
-  .markdown-preview-view h1,
-  .markdown-preview-view h2,
-  .markdown-preview-view h3,
-  .markdown-preview-view h4,
-  .markdown-preview-view h5,
-  .markdown-preview-view h6 {
+  /* Single continuous page: use an absurdly tall page size so Chromium
+     doesn't introduce page breaks. Suppress any lingering breaks on all
+     block elements. */
+  * {
+    page-break-before: avoid !important;
     page-break-after: avoid !important;
-    break-after: avoid !important;
     page-break-inside: avoid !important;
+    break-before: avoid !important;
+    break-after: avoid !important;
     break-inside: avoid !important;
   }
 
@@ -544,7 +518,10 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus {
     color: #928374 !important;
   }
 
-  @page { margin: 0; }
+  @page {
+    size: 21cm 1000cm;
+    margin: 0;
+  }
 
   body { padding: 1.5cm !important; }
 }
