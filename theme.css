@@ -414,6 +414,19 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus {
     letter-spacing: 0.01em;
   }
 
+  h1, h2, h3, h4, h5, h6,
+  .markdown-preview-view h1,
+  .markdown-preview-view h2,
+  .markdown-preview-view h3,
+  .markdown-preview-view h4,
+  .markdown-preview-view h5,
+  .markdown-preview-view h6 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
   p, li, td, th, span, div,
   .markdown-preview-view p,
   .markdown-preview-view li,
@@ -461,6 +474,19 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active:focus {
   table,
   .markdown-preview-view table {
     border-collapse: collapse !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  thead,
+  .markdown-preview-view thead {
+    display: table-header-group !important;
+  }
+
+  tr,
+  .markdown-preview-view tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 
   th,
